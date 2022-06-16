@@ -157,7 +157,7 @@ namespace Common_Utilities
                     new()
                     {
                         Room = RoomType.LczClassDSpawn,
-                        Chance = 100,
+                        Chance = 100
                     }
                 }
             }

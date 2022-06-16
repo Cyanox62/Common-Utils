@@ -78,7 +78,10 @@ namespace Common_Utilities.EventHandlers
                                 ev.Player.RemoveItem(item, false);
                                 item.Spawn(ev.OutputPosition);
                             }
-                        
+
+                        if ((destinationRole == RoleType.Scp173 && Player.Get(x => x.Role == RoleType.Scp173).Count() > 0) ||
+                            (destinationRole == RoleType.Scp096 && Player.Get(x => x.Role == RoleType.Scp096).Count() > 0)) continue;
+
                         ev.Player.SetRole(destinationRole, SpawnReason.ForceClass, keepInventory);
                         Timing.CallDelayed(0.45f, () => ev.Player.Position = ev.OutputPosition);
                         break;
